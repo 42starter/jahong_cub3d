@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:25:28 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:57:49 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:13:16 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	save_bmp(t_game_model *g, char *filename)
 {
 	int		fd;
 
-	fd = open("./image.bmp", O_CREAT | O_RDWR);
+	fd = open("./image.bmp", O_CREAT | O_RDWR | O_TRUNC, S_IWUSR | S_IRUSR);
 	if (fd == -1)
 		ft_exit(0, "save_bmp file error\n");
 	init_game(g, filename);

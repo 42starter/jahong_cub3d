@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 15:35:00 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:03:05 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:05:30 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,5 @@
 
 t_game_model	*get_g(void);
 void			parse(char *filename);
-void			follow_player(t_game_model *game_model);
 
 #endif
