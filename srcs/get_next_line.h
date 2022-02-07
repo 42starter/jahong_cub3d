@@ -6,7 +6,7 @@
 /*   By: seonhong <seonhong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 10:40:38 by seonhong          #+#    #+#             */
-/*   Updated: 2021/10/18 00:39:24 by seonhong         ###   ########.fr       */
+/*   Updated: 2022/02/07 19:33:25 by seonhong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "libft.h"
+# include "libft/libft.h"
 
 # ifndef OPEN_MAX
 #  define OPEN_MAX 32

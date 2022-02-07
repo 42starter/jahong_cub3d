@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utility1.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: seonhong <seonhong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:41:32 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:18:46 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:38:38 by seonhong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "define.h"
 #include "utility.h"
+#include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
