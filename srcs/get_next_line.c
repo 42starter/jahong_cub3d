@@ -6,11 +6,11 @@
 /*   By: seonhong <seonhong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 10:40:33 by seonhong          #+#    #+#             */
-/*   Updated: 2022/02/07 19:20:31 by seonhong         ###   ########.fr       */
+/*   Updated: 2022/02/07 19:49:19 by seonhong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 int	is_newline(char const *s)
 {

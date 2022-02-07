@@ -6,11 +6,21 @@
 /*   By: seonhong <seonhong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 10:40:27 by seonhong          #+#    #+#             */
-/*   Updated: 2022/02/07 19:20:53 by seonhong         ###   ########.fr       */
+/*   Updated: 2022/02/07 19:49:32 by seonhong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
+
+size_t	ft_strlen(const char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len])
+		++len;
+	return (len);
+}
 
 char	*ft_strdup_gnl(const char *s1)
 {
