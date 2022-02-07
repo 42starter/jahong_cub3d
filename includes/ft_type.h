@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_type.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 23:11:51 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/26 15:52:57 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:27:53 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,6 @@ struct	s_sprite
 	int			t_id;
 	t_vector_f	pos;
 	int			is_moving;
-	int			(*handle_color)(int, int);
 	double		dist;
 	int			u_div;
 	int			v_div;

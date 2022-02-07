@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 23:24:24 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:59:08 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:27:13 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ int		ft_isupper(char symbol);
 int		ft_isspace(char symbol);
 void	check_file(char *filename, int flag);
 int		save_bmp(t_game_model *g, char *filename);
-int		get_transparent_color(int color1, int color2);
-int		get_transparent_red_color(int color1, int color2);
 
 #endif

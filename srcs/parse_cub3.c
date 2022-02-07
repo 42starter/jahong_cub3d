@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:41:40 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:58:21 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:27:39 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ void	input_sprite(int x, int y, int id)
 
 	content = malloc(sizeof(t_sprite));
 	content->dist = 0;
-	content->handle_color = get_transparent_color;
 	content->is_moving = 0;
 	content->pos.x = x + 0.5;
 	content->pos.y = y + 0.5;

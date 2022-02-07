@@ -24,7 +24,6 @@ SRCS_NAME=	cub3d.c\
 			sprite2.c\
 			object.c\
 			player.c\
-			color.c\
 			background.c\
 			save_bmp.c\
 			get_next_line.c\
