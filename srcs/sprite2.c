@@ -6,13 +6,12 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 17:16:35 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:45:58 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:46 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include "color.h"
 #include "define.h"

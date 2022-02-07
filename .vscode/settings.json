@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "minimap.h": "c",
+    "mlx.h": "c"
+  }
+}

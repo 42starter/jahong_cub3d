@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:41:32 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:51:49 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:46 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "utility.h"
 #include <fcntl.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
 
 void	copy_data(int *dest, int *src, unsigned int size)

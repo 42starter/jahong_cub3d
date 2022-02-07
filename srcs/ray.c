@@ -6,12 +6,11 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:57:21 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:48:04 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:46 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
-#include <stdio.h>
 
 static void	init_ray_dir(t_ray *ray, t_player *pl)
 {
