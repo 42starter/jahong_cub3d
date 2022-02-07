@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 15:35:00 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/03 18:53:13 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:03:05 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define IDX_R 0
 # define IDX_G 1
 # define IDX_B 2
-# define DEBUG 1
+# define DEBUG 0
 # define PLAYER_ROTATE 3.5
 # define BITMAPFILEHEADER 14
 # define BITMAPINFOHEADER 40
