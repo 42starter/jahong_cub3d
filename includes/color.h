@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   color.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 23:09:35 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/30 15:25:12 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:52:09 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COLOR_H
 # define COLOR_H
 
-typedef union			u_color
+typedef union u_color
 {
-	struct
+	struct s_bit
 	{
 		unsigned int	b	:8;
 		unsigned int	g	:8;
@@ -23,6 +23,6 @@ typedef union			u_color
 		unsigned int	a	:8;
 	}					bit;
 	unsigned int		color;
-}						t_color;
+}	t_color;
 
 #endif

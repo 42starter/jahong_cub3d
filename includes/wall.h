@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wall.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:02:42 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/25 23:24:00 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:50:49 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "define.h"
 
-int draw_wall(t_game_model *game_model);
+int	draw_wall(t_game_model *game_model);
 
 #endif
