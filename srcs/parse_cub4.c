@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:54:13 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:18:46 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:18:38 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,6 @@ void	option_color(char *line, int i, t_color *color)
 	while (line[i] != '\0')
 		if (ft_isspace(line[i++]) == 0)
 			ft_exit(0, "invalid color option input\n");
-}
-
-void	option_r(char *line, int i)
-{
-	get_g()->tmp_w = 0;
-	get_g()->tmp_h = 0;
-	while (line[i] == ' ')
-		i++;
-	while (ft_isdigit(line[i]) == 1)
-		get_g()->tmp_w = get_g()->tmp_w * 10 + line[i++] - '0';
-	while (line[i] == ' ')
-		i++;
-	while (ft_isdigit(line[i]) == 1)
-		get_g()->tmp_h = get_g()->tmp_h * 10 + line[i++] - '0';
-	while (line[i] != '\0')
-		if (ft_isspace(line[i++]) == 0)
-			ft_exit(0, "invalid resolution option input\n");
 }
 
 void	option_path(char *line, int start, char **path)
@@ -86,9 +69,7 @@ void	option_path(char *line, int start, char **path)
 
 void	input_option_from_line(int op_symbol, char *line, int i)
 {
-	if (op_symbol == OP_R)
-		option_r(line, i);
-	else if (op_symbol == OP_NO)
+	if (op_symbol == OP_NO)
 		option_path(line, i, &get_g()->no_path);
 	else if (op_symbol == OP_SO)
 		option_path(line, i, &get_g()->so_path);
@@ -108,9 +89,7 @@ void	input_option_from_line(int op_symbol, char *line, int i)
 
 int	is_option_symbol(char *str)
 {
-	if (ft_strcmp(str, FLAG_RESOLUTION) == 0)
-		return (OP_R);
-	else if (ft_strcmp(str, FLAG_NORTH) == 0)
+	if (ft_strcmp(str, FLAG_NORTH) == 0)
 		return (OP_NO);
 	else if (ft_strcmp(str, FLAG_SOUTH) == 0)
 		return (OP_SO);

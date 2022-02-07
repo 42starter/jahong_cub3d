@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:01:56 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:57:59 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:26:23 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,9 @@ static void	init_mlx(t_game_model *g)
 	int	i;
 
 	i = 0;
-	g->sc_size.x = g->tmp_w;
-	g->sc_size.y = g->tmp_h;
 	g->mlx = mlx_init();
-	if (g->sc_size.x > g->tmp_w)
-		g->sc_size.x = g->tmp_w;
-	if (g->sc_size.y > g->tmp_h)
-		g->sc_size.y = g->tmp_h;
+	g->sc_size.x = 1920;
+	g->sc_size.y = 1080;
 	g->win = mlx_new_window(g->mlx, g->sc_size.x, g->sc_size.y, TITLE_NAME);
 	g->sc_img = mlx_new_image(g->mlx, g->sc_size.x, g->sc_size.y);
 	g->sc_data_1d = (int *)mlx_get_data_addr(\

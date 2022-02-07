@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 15:35:00 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:05:30 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:24:32 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,13 @@
 # define PLAYER_ROTATE 3.5
 # define BITMAPFILEHEADER 14
 # define BITMAPINFOHEADER 40
-# define OP_R 0
-# define OP_NO 1
-# define OP_SO 2
-# define OP_WE 3
-# define OP_EA 4
-# define OP_S 5
-# define OP_F 6
-# define OP_C 7
-# define FLAG_RESOLUTION "R"
+# define OP_NO 0
+# define OP_SO 1
+# define OP_WE 2
+# define OP_EA 3
+# define OP_S 4
+# define OP_F 5
+# define OP_C 6
 # define FLAG_NORTH "NO"
 # define FLAG_SOUTH "SO"
 # define FLAG_WEST "WE"

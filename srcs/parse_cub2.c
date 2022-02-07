@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:41:08 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:18:46 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:19:28 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,14 +91,12 @@ void	check_cub(void)
 	int	i;
 
 	i = 0;
-	while (i < 8)
+	while (i < 7)
 	{
 		if (get_g()->op_flags[i] != 1)
 			ft_exit(0, "overlap option\n");
 		i++;
 	}
-	if (get_g()->tmp_w <= 0 || get_g()->tmp_h <= 0)
-		ft_exit(0, "width or height too short\n");
 	if (get_g()->map_x < 3 || get_g()->map_y < 3)
 		ft_exit(0, "too short map\n");
 }

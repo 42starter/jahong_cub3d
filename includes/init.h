@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 23:24:38 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/25 23:25:12 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:20:16 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	parse_map(void);
 void	check_map(int map_row, int map_col);
 void	rewind_map(void);
 void	option_color(char *line, int i, t_color *color);
-void	option_r(char *line, int i);
 void	option_path(char *line, int start, char **path);
 int		read_option(char *line, char *op_str);
 void	input_option_from_line(int op_symbol, char *line, int i);
