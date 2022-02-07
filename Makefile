@@ -2,8 +2,6 @@ TEST=test.osut
 NAME=cub3D
 CFLAGS=-Wall -Wextra -Werror
 MLXFLAGS=-L./mlx -lmlx -framework OpenGL -framework AppKit
-# MLXSCREENFLAGS=-L./ -lmlxscreen
-MLXSCREENFLAGS=
 SRCS_NAME=	cub3d.c\
 			input.c\
 			vector1.c\
@@ -29,7 +27,6 @@ SRCS_NAME=	cub3d.c\
 			color.c\
 			background.c\
 			save_bmp.c\
-			minimap.c\
 			get_next_line.c\
 			get_next_line_utils.c
 INCFALGS=-I./mlx -I./includes
@@ -43,24 +40,24 @@ all: $(NAME)
 
 .PHONY: test
 test:
-	@gcc $(SRCS) $(MLXFLAGS) $(MLXSCREENFLAGS) $(INCFALGS) -o $(NAME)
+	@gcc $(SRCS) $(MLXFLAGS) $(INCFALGS) -o $(NAME)
 	@./$(NAME) ./cubs/map.cub
 
 .PHONY: gtest
 gtest:
-	@gcc $(SRCS) -g3 -fsanitize=address $(MLXFLAGS) $(MLXSCREENFLAGS) $(INCFALGS) -o $(NAME)
+	@gcc $(SRCS) -g3 -fsanitize=address $(MLXFLAGS) $(INCFALGS) -o $(NAME)
 	@./$(NAME) ./cubs/map.cub
 
 
 .PHONY: save
 save:
-	@gcc $(SRCS) $(MLXFLAGS) $(MLXSCREENFLAGS) $(INCFALGS) -o $(NAME)
+	@gcc $(SRCS) $(MLXFLAGS) $(INCFALGS) -o $(NAME)
 	@./$(NAME) --save ./cubs/map.cub
 	@chmod 777 ./image.bmp
 
 $(NAME): $(OBJS)
 	@$(MAKE) -C ./mlx all
-	@gcc $(CFLAGS) $(MLXFLAGS) $(MLXSCREENFLAGS) $(INCFALGS) $(SRCS) -o $(NAME)
+	@gcc $(CFLAGS) $(MLXFLAGS) $(INCFALGS) $(SRCS) -o $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@mkdir $(OBJS_DIR) 2> /dev/null || true

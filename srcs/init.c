@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:01:56 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:18:04 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:57:59 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ static void	init_mlx(t_game_model *g)
 	g->sc_size.x = g->tmp_w;
 	g->sc_size.y = g->tmp_h;
 	g->mlx = mlx_init();
-	// mlx_get_screen_size(g->mlx, &g->tmp_w, &g->tmp_h);
 	if (g->sc_size.x > g->tmp_w)
 		g->sc_size.x = g->tmp_w;
 	if (g->sc_size.y > g->tmp_h)

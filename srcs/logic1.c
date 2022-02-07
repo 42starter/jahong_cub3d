@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:31:39 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:18:08 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 20:00:49 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 #include "object.h"
 #include "player.h"
 #include "color.h"
-#include "minimap.h"
 #include <stdlib.h>
 #include <math.h>
 
@@ -34,7 +33,6 @@ void	draw(t_game_model *g)
 	draw_ground(g);
 	draw_wall(g);
 	draw_sprite(g);
-	draw_minimap(g, 0, 0);
 }
 
 void	render(t_game_model *g)
