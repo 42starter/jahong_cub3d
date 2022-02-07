@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:31:39 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:49:32 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:11 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 #include "color.h"
 #include <stdlib.h>
 #include <math.h>
-#include <stdio.h>
 
 void	handle_input_keys(t_game_model *g)
 {

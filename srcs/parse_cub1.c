@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:40:37 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/03 20:25:05 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:15 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "get_next_line.h"
 #include <fcntl.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 static void	check_dot_cub(char *filename)
 {

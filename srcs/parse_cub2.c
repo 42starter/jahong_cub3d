@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:41:08 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:52:34 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:46 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "get_next_line.h"
 #include <fcntl.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 void	input_player_location(int x, int y, int direction)
 {

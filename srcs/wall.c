@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:46:55 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:50:53 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:41 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "mlx.h"
 #include "ray.h"
 #include <math.h>
-#include <stdio.h>
 
 static	void	calc_texture(
 	t_ray *ray, t_wall_value *v, t_player *pl, t_game_model *g)

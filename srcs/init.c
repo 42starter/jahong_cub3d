@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:01:56 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/03 20:25:05 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:04 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "utility.h"
 #include "mlx.h"
 #include "vector.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 static double	g_s_dirs[4][4] =

@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:54:13 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:46:23 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/07 19:18:46 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "utility.h"
 #include <fcntl.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 void	option_color(char *line, int i, t_color *color)
 {
