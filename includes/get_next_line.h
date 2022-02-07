@@ -3,35 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: seonhong <seonhong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 22:44:35 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/26 14:37:21 by jayi             ###   ########.fr       */
+/*   Created: 2021/01/04 10:40:38 by seonhong          #+#    #+#             */
+/*   Updated: 2021/10/18 00:39:24 by seonhong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define ERROR_NONE 2
-# define RES_A_LINE_READ 1
-# define RES_REACHED_EOF 0
-# define RES_ERROR_HAPPENED -1
-# include <stddef.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
-# endif
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include "libft.h"
 
 # ifndef OPEN_MAX
-#  define OPEN_MAX 4096
+#  define OPEN_MAX 32
+# endif
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
 # endif
 
 int		get_next_line(int fd, char **line);
-char	*ft_strchr(const char *str, int ch);
-char	*ft_strnjoin_and_free(char *freeable_str, char *str1, int count_str1);
-size_t	ft_strlen(const char *str);
-char	*ft_strndup(const char *str, size_t n);
-char	*ft_strdup(const char *str);
+char	*ft_strjoin_gnl(char *s1, char const *s2);
+char	*ft_strdup_gnl(const char *s1);
+size_t	t_strlcpy_gnl(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat_gnl(char *dest, const char *src, size_t dstsize);
 
 #endif

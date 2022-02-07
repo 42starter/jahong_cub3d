@@ -3,130 +3,88 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: seonhong <seonhong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 22:44:10 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/25 13:57:44 by jayi             ###   ########.fr       */
+/*   Created: 2021/01/04 10:40:33 by seonhong          #+#    #+#             */
+/*   Updated: 2022/02/07 19:20:31 by seonhong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 
-static int		read_fd(int fd, int *len_read,
-						char **buf_saved_str, char *buf_read)
+int	is_newline(char const *s)
 {
-	while ((*len_read = read(fd, buf_read, BUFFER_SIZE)) > 0)
+	size_t	i;
+
+	if (s == NULL)
+		return (0);
+	i = 0;
+	while (s[i] != '\0')
 	{
-		buf_read[*len_read] = '\0';
-		if (ft_strchr(buf_read, '\n') != NULL)
-		{
-			return (ERROR_NONE);
-		}
-		if ((*buf_saved_str =
-			ft_strnjoin_and_free(*buf_saved_str, buf_read, *len_read)) == NULL)
-		{
-			return (RES_ERROR_HAPPENED);
-		}
+		if (s[i] == '\n')
+			return (i);
+		i++;
 	}
-	if (*len_read < 0)
-	{
-		return (RES_ERROR_HAPPENED);
-	}
-	return (ERROR_NONE);
+	return (-1);
 }
 
-static int		handle_saved_str(char **buf_saved_str, char **line)
+int	split_line(char **backup, char **line, int cut_idx)
 {
-	char	*pos_newline;
-	char	*temp;
-	int		idx_newline;
+	char			*temp;
+	int				len;
 
-	if (*buf_saved_str != NULL &&
-		(pos_newline = ft_strchr(*buf_saved_str, '\n')) != NULL)
+	(*backup)[cut_idx] = '\0';
+	*line = ft_strdup_gnl(*backup);
+	len = ft_strlen(*backup + cut_idx + 1);
+	if (len == 0)
 	{
-		idx_newline = ft_strlen(*buf_saved_str) - ft_strlen(pos_newline);
-		if ((*line = ft_strndup(*buf_saved_str, idx_newline)) == NULL)
-		{
-			return (RES_ERROR_HAPPENED);
-		}
-		if ((temp = ft_strdup(pos_newline + 1)) == NULL)
-		{
-			return (RES_ERROR_HAPPENED);
-		}
-		free(*buf_saved_str);
-		*buf_saved_str = temp;
-		return (RES_A_LINE_READ);
+		free(*backup);
+		*backup = 0;
+		return (1);
 	}
-	return (ERROR_NONE);
+	temp = ft_strdup_gnl(*backup + cut_idx + 1);
+	free(*backup);
+	*backup = temp;
+	return (1);
 }
 
-static int		seperate_str(int len_read, char **line,
-							char **buf_saved_str, char *buf_read)
+int	return_all(char **backup, char **line, int read_size)
 {
-	char	*pos_newline;
+	int	cut_idx;
 
-	if (len_read != 0)
+	if (read_size < 0)
+		return (-1);
+	cut_idx = is_newline(*backup);
+	if (*backup && cut_idx >= 0)
+		return (split_line(backup, line, cut_idx));
+	else if (*backup != NULL)
 	{
-		pos_newline = ft_strchr(buf_read, '\n');
-		if ((*line = ft_strnjoin_and_free(*buf_saved_str, buf_read,
-			len_read - ft_strlen(pos_newline))) == NULL)
-		{
-			return (RES_ERROR_HAPPENED);
-		}
-		if ((*buf_saved_str = ft_strdup(pos_newline + 1)) == NULL)
-		{
-			return (RES_ERROR_HAPPENED);
-		}
+		*line = *backup;
+		*backup = 0;
+		return (0);
 	}
-	else
-	{
-		if ((*line = ft_strnjoin_and_free(*buf_saved_str, "", 0)) == NULL)
-		{
-			return (RES_ERROR_HAPPENED);
-		}
-		*buf_saved_str = NULL;
-	}
-	return (len_read > 0 ? RES_A_LINE_READ : RES_REACHED_EOF);
+	*line = ft_strdup_gnl("");
+	return (0);
 }
 
-static int		handle_read_and_seperate(
-				int fd, char **line, char **buf_saved_str, char **buf_read)
+int	get_next_line(int fd, char **line)
 {
-	int		len_read;
-	int		result;
+	static char	*backup;
+	char		buf[BUFFER_SIZE + 1];
+	int			read_size;
+	int			cut_idx;
 
-	if ((*buf_read = malloc(sizeof(char) * (BUFFER_SIZE + 1))) == NULL)
+	if (fd < 0 || line == NULL || BUFFER_SIZE <= 0)
+		return (-1);
+	read_size = read(fd, buf, BUFFER_SIZE);
+	while (read_size > 0)
 	{
-		return (RES_ERROR_HAPPENED);
+		buf[read_size] = '\0';
+		backup = ft_strjoin_gnl(backup, buf);
+		cut_idx = is_newline(backup);
+		if (cut_idx >= 0)
+			return (split_line(&backup, line, cut_idx));
+		read_size = read(fd, buf, BUFFER_SIZE);
 	}
-	*buf_read[0] = '\0';
-	result = read_fd(fd, &len_read, buf_saved_str, *buf_read);
-	if (result == ERROR_NONE)
-	{
-		result = seperate_str(len_read, line, buf_saved_str, *buf_read);
-	}
-	return (result);
-}
-
-int				get_next_line(int fd, char **line)
-{
-	static char		*buf_saved_str;
-	char			*buf_read;
-	int				result;
-
-	buf_read = NULL;
-	if (BUFFER_SIZE <= 0 || line == NULL || fd < 0 || fd > OPEN_MAX)
-	{
-		return (RES_ERROR_HAPPENED);
-	}
-	result = handle_saved_str(&buf_saved_str, line);
-	if (result == ERROR_NONE)
-	{
-		result = handle_read_and_seperate(fd, line, &buf_saved_str, &buf_read);
-	}
-	free(buf_read);
-	return (result);
+	return (return_all(&backup, line, read_size));
 }

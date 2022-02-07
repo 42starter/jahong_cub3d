@@ -3,123 +3,94 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: seonhong <seonhong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 22:44:43 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/25 13:56:48 by jayi             ###   ########.fr       */
+/*   Created: 2021/01/04 10:40:27 by seonhong          #+#    #+#             */
+/*   Updated: 2022/02/07 19:20:53 by seonhong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdlib.h>
 
-char	*ft_strchr(const char *str1, int ch)
+char	*ft_strdup_gnl(const char *s1)
 {
-	unsigned char	symbol;
-	char			*cur_str;
+	char	*s2;
+	size_t	i;
+	size_t	len;
 
-	cur_str = (char *)str1;
-	symbol = ch;
-	while (1)
-	{
-		if (*cur_str == symbol)
-		{
-			return (cur_str);
-		}
-		if (*cur_str == '\0')
-		{
-			return (NULL);
-		}
-		++cur_str;
-	}
-}
-
-char	*ft_strnjoin_and_free(char *freeable_str, char *str1, int count_str1)
-{
-	char	*new_str;
-	char	*cur_free_str;
-	size_t	idx;
-	size_t	len_newstr;
-
-	idx = 0;
-	cur_free_str = freeable_str;
-	len_newstr = cur_free_str != NULL ?
-				ft_strlen(cur_free_str) + ft_strlen(str1) : ft_strlen(str1);
-	if ((new_str = malloc((len_newstr + 1) * sizeof(char))) == NULL)
+	len = ft_strlen(s1);
+	s2 = malloc(sizeof(char) * (len + 1));
+	if (s2 == NULL)
 		return (NULL);
-	if (cur_free_str != NULL)
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		while (*cur_free_str != '\0')
-			new_str[idx++] = *cur_free_str++;
+		s2[i] = s1[i];
+		i++;
 	}
-	while (*str1 != '\0' && count_str1-- > 0)
-		new_str[idx++] = *str1++;
-	new_str[idx] = '\0';
-	free(freeable_str);
-	return (new_str);
+	s2[i] = '\0';
+	return (s2);
 }
 
-size_t	ft_strlen(const char *str1)
+size_t	ft_strlcpy_gnl(char *dst, const char *src, size_t dstsize)
 {
-	const char *cur_str;
+	size_t	i;
+	size_t	src_len;
 
-	cur_str = str1;
-	while (*cur_str != '\0')
+	if (dst == NULL || src == NULL)
+		return (0);
+	src_len = ft_strlen(src);
+	if (dstsize == 0)
+		return (src_len);
+	i = 0;
+	while (i < (dstsize - 1) && src[i] != '\0')
 	{
-		++cur_str;
+		dst[i] = src[i];
+		i++;
 	}
-	return (cur_str - str1);
+	dst[i] = '\0';
+	return (src_len);
 }
 
-char	*ft_strndup(const char *str, size_t n)
+size_t	ft_strlcat_gnl(char *dst, const char *src, size_t dstsize)
 {
-	const char	*cur_src;
-	const char	*end_src;
-	char		*cur_dst;
-	void		*new_str;
-	size_t		len;
+	size_t	src_len;
+	size_t	dst_len;
+	size_t	i;
 
-	len = ft_strlen(str);
-	len = len > n ? n : len;
-	if ((new_str = malloc(sizeof(char) * len + 1)) == NULL)
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	if (dstsize < dst_len + 1)
+		return (dstsize + src_len);
+	i = 0;
+	while (src[i] != '\0' && dst_len + i + 1 < dstsize)
 	{
+		dst[dst_len + i] = src[i];
+		i++;
+	}
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
+}
+
+char	*ft_strjoin_gnl(char *s1, char const *s2)
+{
+	char	*newstr;
+	size_t	s1_len;
+	size_t	s2_len;
+
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	}
-	cur_dst = new_str;
-	cur_src = str;
-	end_src = cur_src + len;
-	while (cur_src != end_src)
-	{
-		*cur_dst = *cur_src;
-		++cur_src;
-		++cur_dst;
-	}
-	*cur_dst = '\0';
-	return (new_str);
-}
-
-char	*ft_strdup(const char *str)
-{
-	const char	*cur_src;
-	const char	*end_src;
-	char		*cur_dst;
-	void		*new_str;
-	size_t		len;
-
-	len = ft_strlen(str);
-	if ((new_str = malloc(sizeof(char) * len + 1)) == NULL)
-	{
+	else if (s1 == NULL && s2 != NULL)
+		return (ft_strdup_gnl(s2));
+	else if (s1 != NULL && s2 == NULL)
+		return (ft_strdup_gnl(s1));
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	newstr = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (newstr == NULL)
 		return (NULL);
-	}
-	cur_dst = new_str;
-	cur_src = str;
-	end_src = cur_src + len;
-	while (cur_src != end_src)
-	{
-		*cur_dst = *cur_src;
-		++cur_src;
-		++cur_dst;
-	}
-	*cur_dst = '\0';
-	return (new_str);
+	ft_strlcpy_gnl(newstr, s1, s1_len + 1);
+	free(s1);
+	ft_strlcat_gnl(newstr, s2, s1_len + s2_len + 1);
+	return (newstr);
 }
