@@ -35,23 +35,6 @@ OBJS= $(addprefix $(OBJS_DIR)/, $(OBJS_NAME))
 
 all: $(NAME)
 
-.PHONY: test
-test:
-	@gcc $(SRCS) $(MLXFLAGS) $(INCFALGS) -o $(NAME)
-	@./$(NAME) ./cubs/map.cub
-
-.PHONY: gtest
-gtest:
-	@gcc $(SRCS) -g3 -fsanitize=address $(MLXFLAGS) $(INCFALGS) -o $(NAME)
-	@./$(NAME) ./cubs/map.cub
-
-
-.PHONY: save
-save:
-	@gcc $(SRCS) $(MLXFLAGS) $(INCFALGS) -o $(NAME)
-	@./$(NAME) --save ./cubs/map.cub
-	@chmod 777 ./image.bmp
-
 $(NAME): $(OBJS)
 	@$(MAKE) -C ./mlx all
 	@gcc $(CFLAGS) $(MLXFLAGS) $(INCFALGS) $(SRCS) -o $(NAME)
