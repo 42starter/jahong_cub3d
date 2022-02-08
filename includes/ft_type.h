@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 23:11:51 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:27:53 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:39:23 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,10 @@ typedef struct s_ray			t_ray;
 typedef struct s_node			t_node;
 typedef struct s_vector			t_vector;
 typedef struct s_player			t_player;
-typedef struct s_sprite			t_sprite;
 typedef struct s_texture		t_texture;
 typedef struct s_vector_f		t_vector_f;
 typedef struct s_game_model		t_game_model;
 typedef struct s_wall_value		t_wall_value;
-typedef struct s_sprite_value	t_sprite_value;
-
-struct	s_sprite_value
-{
-	double	sp_x;
-	double	sp_y;
-	double	inv_det;
-	double	tr_x;
-	double	tr_y;
-	int		sp_s_x;
-	int		v_m_sc;
-	int		sp_h;
-	int		draw_s_y;
-	int		draw_e_y;
-	int		sp_w;
-	int		draw_s_x;
-	int		draw_e_x;
-	int		st;
-	int		tex_x;
-	int		y;
-	int		d;
-	int		tex_y;
-	int		color;
-	int		v_y;
-};
 
 struct	s_wall_value
 {
@@ -113,7 +87,6 @@ struct	s_game_model
 	t_color			f_color;
 	t_color			c_color;
 	t_node			*str_map;
-	t_node			*sprites;
 	unsigned int	input_keys;
 	double			z_buf[5000];
 	double			fps;
@@ -136,7 +109,7 @@ struct	s_game_model
 	int				pl_s_dir;
 	int				player_flag;
 	int				textures[5][64 * 64];
-	int				op_flags[8];
+	int				op_flags[6];
 	int				map_y;
 	int				map_x;
 	int				sc_bpp;
@@ -154,17 +127,6 @@ struct	s_ray
 	double			p_dist;
 	int				hit;
 	int				side;
-};
-
-struct	s_sprite
-{
-	int			t_id;
-	t_vector_f	pos;
-	int			is_moving;
-	double		dist;
-	int			u_div;
-	int			v_div;
-	double		v_move;
 };
 
 #endif

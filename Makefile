@@ -20,8 +20,6 @@ SRCS_NAME=	cub3d.c\
 			utility_mem.c\
 			ray.c\
 			lst.c\
-			sprite1.c\
-			sprite2.c\
 			object.c\
 			player.c\
 			background.c\

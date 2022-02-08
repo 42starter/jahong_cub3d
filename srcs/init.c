@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:01:56 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:26:23 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:51:24 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void	init_texture(t_game_model *g)
 	load_image(g, g->textures[TEX_WALL_S], g->so_path);
 	load_image(g, g->textures[TEX_WALL_W], g->we_path);
 	load_image(g, g->textures[TEX_WALL_E], g->ea_path);
-	load_image(g, g->textures[TEX_GHOST], g->s_path);
 }
 
 void	init_game(t_game_model *game_model, char *filename)

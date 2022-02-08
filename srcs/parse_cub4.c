@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:54:13 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:18:38 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:51:06 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ void	input_option_from_line(int op_symbol, char *line, int i)
 		option_path(line, i, &get_g()->we_path);
 	else if (op_symbol == OP_EA)
 		option_path(line, i, &get_g()->ea_path);
-	else if (op_symbol == OP_S)
-		option_path(line, i, &get_g()->s_path);
 	else if (op_symbol == OP_F)
 		option_color(line, i, &get_g()->f_color);
 	else if (op_symbol == OP_C)
@@ -97,12 +95,10 @@ int	is_option_symbol(char *str)
 		return (OP_WE);
 	else if (ft_strcmp(str, FLAG_EAST) == 0)
 		return (OP_EA);
-	else if (ft_strcmp(str, FLAG_SPRITE) == 0)
-		return (OP_S);
 	else if (ft_strcmp(str, FLAG_FLOOR) == 0)
 		return (OP_F);
 	else if (ft_strcmp(str, FLAG_CELLING) == 0)
 		return (OP_C);
 	else
-		return (0);
+		return (-1);
 }

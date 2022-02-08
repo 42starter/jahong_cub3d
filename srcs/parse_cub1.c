@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:40:37 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:18:15 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:44:46 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,10 @@ static void	init_cub(void)
 	int	i;
 
 	get_g()->str_map = NULL;
-	get_g()->sprites = NULL;
 	get_g()->map_y = 0;
 	get_g()->map_x = 0;
 	i = 0;
-	while (i < 8)
+	while (i < 6)
 		get_g()->op_flags[i++] = 0;
 }
 

@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:31:39 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:00:49 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:51:33 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include "ray.h"
 #include "utility.h"
 #include "background.h"
-#include "sprite.h"
 #include "object.h"
 #include "player.h"
 #include "color.h"
@@ -32,7 +31,6 @@ void	draw(t_game_model *g)
 	draw_sky(g);
 	draw_ground(g);
 	draw_wall(g);
-	draw_sprite(g);
 }
 
 void	render(t_game_model *g)

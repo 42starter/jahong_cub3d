@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:31:39 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:18:11 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:39:11 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include "ray.h"
 #include "utility.h"
 #include "background.h"
-#include "sprite.h"
 #include "object.h"
 #include "player.h"
 #include "color.h"

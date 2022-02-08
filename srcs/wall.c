@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:46:55 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 19:18:41 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 03:28:52 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 #include "mlx.h"
 #include "ray.h"
 #include <math.h>
+
+static	void	calc_wall_height(
+	t_ray *ray, t_wall_value *v, t_player *pl, t_game_model *g)
+{
+	v->line_h = (int)(g->sc_size.y / ray->p_dist);
+	v->draw_s_y = -v->line_h / 2 + g->sc_size.y / 2 + pl->pos.z;
+	if (v->draw_s_y < 0)
+		v->draw_s_y = 0;
+	v->draw_e_y = v->line_h / 2 + g->sc_size.y / 2 + pl->pos.z;
+	if (v->draw_e_y >= g->sc_size.y)
+		v->draw_e_y = g->sc_size.y;
+}
 
 static	void	calc_texture(
 	t_ray *ray, t_wall_value *v, t_player *pl, t_game_model *g)
@@ -31,8 +43,8 @@ static	void	calc_texture(
 	if (ray->side == RAY_SIDE_Y && ray->dir.y < 0)
 		v->tex_x = TEX_WIDTH - v->tex_x - 1;
 	v->step = (double)TEX_HEIGHT / v->line_h;
-	v->tex_pos = (v->draw_s_y - g->sc_size.y / \
-	2 + v->line_h / 2 - pl->pos.z) * v->step;
+	v->tex_pos = (v->draw_s_y - g->sc_size.y / 2 + \
+		v->line_h / 2 - pl->pos.z) * v->step;
 	if (ray->side == RAY_SIDE_Y && ray->step.y == 1)
 		v->wall_dir = TEX_WALL_N;
 	else if (ray->side == RAY_SIDE_Y && ray->step.y == -1)
@@ -41,18 +53,6 @@ static	void	calc_texture(
 		v->wall_dir = TEX_WALL_W;
 	else if (ray->side == RAY_SIDE_X && ray->step.x == -1)
 		v->wall_dir = TEX_WALL_E;
-}
-
-static	void	calc_wall_height(
-	t_ray *ray, t_wall_value *v, t_player *pl, t_game_model *g)
-{
-	v->line_h = (int)(g->sc_size.y / ray->p_dist);
-	v->draw_s_y = -v->line_h / 2 + g->sc_size.y / 2 + pl->pos.z;
-	if (v->draw_s_y < 0)
-		v->draw_s_y = 0;
-	v->draw_e_y = v->line_h / 2 + g->sc_size.y / 2 + pl->pos.z;
-	if (v->draw_e_y >= g->sc_size.y)
-		v->draw_e_y = g->sc_size.y;
 }
 
 static	void	calc_color(t_ray *ray, t_wall_value *v, t_game_model *g)

@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 15:35:00 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:24:32 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:40:46 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,18 @@
 # define OP_SO 1
 # define OP_WE 2
 # define OP_EA 3
-# define OP_S 4
-# define OP_F 5
-# define OP_C 6
+# define OP_F 4
+# define OP_C 5
 # define FLAG_NORTH "NO"
 # define FLAG_SOUTH "SO"
 # define FLAG_WEST "WE"
 # define FLAG_EAST "EA"
-# define FLAG_SPRITE "S"
 # define FLAG_FLOOR "F"
 # define FLAG_CELLING "C"
 # define TEX_WALL_N 0
 # define TEX_WALL_S 1
 # define TEX_WALL_W 2
 # define TEX_WALL_E 3
-# define TEX_GHOST 4
 # define FLAG_MAP_N 0
 # define FLAG_MAP_E 1
 # define FLAG_MAP_W 2

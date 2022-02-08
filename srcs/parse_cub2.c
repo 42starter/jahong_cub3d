@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:41:08 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:19:28 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:37:05 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	check_cub(void)
 	int	i;
 
 	i = 0;
-	while (i < 7)
+	while (i < 6)
 	{
 		if (get_g()->op_flags[i] != 1)
 			ft_exit(0, "overlap option\n");

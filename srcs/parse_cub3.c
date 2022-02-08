@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:41:40 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/07 20:27:39 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:37:33 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,24 +86,6 @@ int	allocate_map(void)
 	return (1);
 }
 
-void	input_sprite(int x, int y, int id)
-{
-	t_sprite	*content;
-
-	content = malloc(sizeof(t_sprite));
-	content->dist = 0;
-	content->is_moving = 0;
-	content->pos.x = x + 0.5;
-	content->pos.y = y + 0.5;
-	content->pos.z = 0;
-	content->t_id = id;
-	content->u_div = 1;
-	content->v_div = 1;
-	content->v_move = 0.0;
-	add_node(&get_g()->sprites, content);
-	get_g()->w_map[x][y] = 0;
-}
-
 void	parse_map(void)
 {
 	t_node	*cur;
@@ -121,8 +103,6 @@ void	parse_map(void)
 		{
 			if (v[x] == 'N' || v[x] == 'E' || v[x] == 'W' || v[x] == 'S')
 				input_player_location(x, y, v[x]);
-			else if (v[x] == '2')
-				input_sprite(x, y, TEX_GHOST);
 			else if (v[x] == '0')
 				get_g()->w_map[x][y] = 0;
 			else
