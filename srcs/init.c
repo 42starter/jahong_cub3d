@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:01:56 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/08 16:51:24 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 17:19:08 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static double	g_s_dirs[4][4] =
 
 static void	init_player(t_player *pl)
 {
-	pl->pos.x = get_g()->pl_s_y + 0.5;
-	pl->pos.y = get_g()->pl_s_x + 0.5;
+	pl->pos.x = get_g()->pl_s_x + 0.5;
+	pl->pos.y = get_g()->pl_s_y + 0.5;
 	pl->dir.x = g_s_dirs[get_g()->pl_s_dir][0];
 	pl->dir.y = g_s_dirs[get_g()->pl_s_dir][1];
 	get_g()->cam.x = g_s_dirs[get_g()->pl_s_dir][2];

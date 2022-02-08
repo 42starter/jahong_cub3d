@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:54:13 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/08 16:51:06 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 17:13:19 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	option_color(char *line, int i, t_color *color)
 		i++;
 	while (ft_isdigit(line[i]) == 1)
 		color->bit.b = color->bit.b * 10 + line[i++] - '0';
-	if (color->bit.r > 255 || color->bit.g > 255 || color->bit.b > 255)
-		ft_exit(0, "invalid color\n");
 	while (line[i] != '\0')
 		if (ft_isspace(line[i++]) == 0)
 			ft_exit(0, "invalid color option input\n");
