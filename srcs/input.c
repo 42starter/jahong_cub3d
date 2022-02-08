@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:30:54 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/05 14:53:04 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:53:04 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ static unsigned int	get_key_bit(int keycode)
 		return (KEY_BIT_LEFT);
 	else if (keycode == KEYCODE_RIGHT)
 		return (KEY_BIT_RIGHT);
-	else if (keycode == KEYCODE_SPACE)
-		return (KEY_BIT_SPACE);
 	else if (keycode == KEYCODE_Q)
 		return (KEY_BIT_Q);
 	else if (keycode == KEYCODE_E)

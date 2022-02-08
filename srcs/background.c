@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   background.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 15:40:53 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/25 22:39:17 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:54:01 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	draw_sky(t_game_model *game_model)
 
 	y = 0;
 	x = 0;
-	while (y < game_model->sc_size.y / 2 + game_model->pl.pos.z)
+	while (y < game_model->sc_size.y / 2)
 	{
 		x = 0;
 		if (y < game_model->sc_size.y)
@@ -39,7 +39,7 @@ void	draw_ground(t_game_model *game_model)
 	int	y;
 	int	x;
 
-	y = game_model->sc_size.y / 2 + game_model->pl.pos.z;
+	y = game_model->sc_size.y / 2;
 	x = 0;
 	while (y < game_model->sc_size.y)
 	{

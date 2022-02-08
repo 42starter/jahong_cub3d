@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:31:39 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/08 16:39:11 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:54:06 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void	update_player_pos(t_game_model *g)
 			pl->pos.y += pl->speed.y * 0.1;
 		pl->speed = v_zero();
 	}
-	if (fabs(pl->pos.z) >= __DBL_EPSILON__)
-		pl->pos.z -= PLAYER_JUMP / 2;
 }
 
 void	update(t_game_model *g)

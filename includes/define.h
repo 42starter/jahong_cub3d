@@ -6,7 +6,7 @@
 /*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 15:35:00 by jayi              #+#    #+#             */
-/*   Updated: 2022/02/08 16:40:46 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:55:02 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 # define RAY_SIDE_X 0
 # define RAY_SIDE_Y 1
 # define PLAYER_WALL_GAP 0.01
-# define PLAYER_JUMP		48
 # define ERROR_MSG		"Error\n"
 # define CHECKED_MAP		10
 # define IDX_R 0

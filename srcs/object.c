@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   object.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:40:16 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/29 15:59:10 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:53:28 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,4 @@ void	add_speed(t_player *object, int direction)
 		new_dir = v_plus(new_dir, v_rotate(object->dir, -90));
 	if (!v_is_zero(new_dir))
 		object->speed = v_normalize(new_dir);
-}
-
-void	add_pos_z(t_player *object, int value, int do_jump)
-{
-	if (do_jump & KEY_BIT_SPACE)
-		object->pos.z += value;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 15:35:03 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/25 23:23:13 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:53:15 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # define KEY_BIT_UP 2
 # define KEY_BIT_LEFT 4
 # define KEY_BIT_RIGHT 8
-# define KEY_BIT_SPACE 16
 # define KEY_BIT_Q 32
 # define KEY_BIT_E 64
 # define KEY_BIT_W 128
@@ -29,7 +28,6 @@
 # define KEYCODE_RIGHT 124
 # define KEYCODE_DOWN 125
 # define KEYCODE_UP 126
-# define KEYCODE_SPACE 49
 # define KEYCODE_Q 12
 # define KEYCODE_W 13
 # define KEYCODE_E 14

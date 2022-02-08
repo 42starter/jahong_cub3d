@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jayi <jayi@student.42.kr>                  +#+  +:+       +#+        */
+/*   By: jayi <jayi@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:56:28 by jayi              #+#    #+#             */
-/*   Updated: 2021/05/25 17:24:38 by jayi             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:53:37 by jayi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	control_player(t_game_model *game_model)
 {
 	add_speed(&game_model->pl, game_model->input_keys);
-	add_pos_z(&game_model->pl, PLAYER_JUMP, game_model->input_keys);
 }
 
 void	rotate_player(t_game_model *game_model)
